@@ -1,0 +1,27 @@
+body {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.location-bar {
+    height: 30px;
+    padding: 2px 6px;
+    display: flex;
+    border-bottom: 1px solid #999;
+}
+.location-input {
+    flex: 1;
+    padding: 0 4px;
+    border: 0;
+}
+.location-input:focus {
+    outline: none;
+}
+.location-bar i {
+    background: #463;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+}
