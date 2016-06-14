@@ -1,5 +1,12 @@
+html,
 body {
-    padding: 5px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
     display: flex;
     flex-direction: column;
 }
@@ -24,4 +31,45 @@ body {
     width: 30px;
     height: 30px;
     margin: 0 2px;
+}
+i.home {
+  background: url("./images/home_normal.png") center center no-repeat;
+}
+i.home:hover {
+  background-image: url("./images/home_hover.png");
+}
+i.home:active {
+  background-image: url("./images/home_pressed.png");
+}
+i.refresh {
+  background: url("./images/reload_normal.png") center center no-repeat;
+}
+i.refresh:hover {
+  background-image: url("./images/reload_hover.png");
+}
+i.refresh:active {
+  background-image: url("./images/reload_pressed.png");
+}
+i.bookmark {
+  background: url("./images/star_button_normal.png") center center no-repeat;
+}
+i.bookmark:hover {
+  background-image: url("./images/star_button_hover.png");
+}
+i.bookmark:active {
+  background-image: url("./images/star_button_pressed.png");
+}
+i.setting {
+  background: url("./images/setting_normal.png") center center no-repeat;
+}
+i.setting:hover {
+  background-image: url("./images/setting_hover.png");
+}
+i.setting:active {
+  background-image: url("./images/setting_pressed.png");
+}
+
+.webview {
+    height: 100%;
+    width: 100%;
 }

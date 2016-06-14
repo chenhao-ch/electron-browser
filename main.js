@@ -15,7 +15,7 @@ function createWindow() {
 }
 
 app.on('ready', createWindow);
-
+app.dock.setIcon(`${__dirname}/images/browser_icon.png`);
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();

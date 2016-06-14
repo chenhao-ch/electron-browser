@@ -18,12 +18,13 @@ locationBar.addEventListener('click', (e) => {
     return;
   }
   const clz = target.className;
+  console.log(clz);
   switch(clz) {
     case 'home':
       loadPage(inlinePage.newtab, true);
       break;
     case 'refresh':
-      loadPage(url, true);
+      webview.reload();
       break;
     case 'bookmark':
       loadPage(inlinePage.bookmark, true);
@@ -44,6 +45,22 @@ locationInput.addEventListener('keydown', (e) => {
   }
 });
 
+webview.addEventListener('new-window', (e) => {
+  console.log('new-window');
+  const newUrl = e.url;
+  loadPage(newUrl);
+});
+webview.addEventListener('will-navigate', (e) => {
+  console.log('will-navigate');
+  const newUrl = e.url;
+  loadPage(newUrl);
+});
+webview.addEventListener('page-title-updated', (e) => {
+  console.log('page-title-updated');
+  const title = e.title;
+  document.title = title;
+});
+
 const loadPage = (newUrl, refresh) => {
   if(newUrl === url && refresh) {
     return;
@@ -59,6 +76,8 @@ const loadPage = (newUrl, refresh) => {
     webview.src = url;
   }
 };
+
+
 
 setTimeout(() => {
   loadPage('electron://newtab');
